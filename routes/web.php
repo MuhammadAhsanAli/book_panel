@@ -12,9 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 Auth::routes();
+Route::get('/', 'BookController@index')->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Author module routes
+Route::prefix('author')->group(function () {
+	Route::get('/', 'AuthorController@index')->name('author.manage');
+	Route::get('add', 'AuthorController@add')->name('author.add');
+	Route::post('insert', 'AuthorController@insert')->name('author.insert');
+	Route::get('edit/{id}', 'AuthorController@edit')->name('author.edit');
+	Route::post('update', 'AuthorController@update')->name('author.update');  
+});
