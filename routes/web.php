@@ -16,7 +16,17 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+//Book module routes
 Route::get('/', 'BookController@index')->name('home');
+Route::prefix('book')->group(function () {
+	Route::get('/', 'BookController@index')->name('book.manage');
+	Route::get('add', 'BookController@add')->name('book.add');
+	Route::post('insert', 'BookController@insert')->name('book.insert');
+	Route::get('edit/{id}', 'BookController@edit')->name('book.edit');
+	Route::post('update', 'BookController@update')->name('book.update');  
+	Route::get('delete/{id}', 'BookController@delete')->name('book.delete');
+});
 
 //Author module routes
 Route::prefix('author')->group(function () {

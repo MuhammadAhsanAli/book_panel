@@ -215,6 +215,17 @@ _fnSortFlatten:Y,_fnSort:rb,_fnSortAria:Nb,_fnSortListener:Za,_fnSortAttachListe
 f.each(q,function(a,b){f.fn.DataTable[a]=b});return f.fn.dataTable});
 
 
+
+//book table
+$('#books_table').DataTable(
+{
+    columnDefs: [
+        { targets: [0], "orderable": false},
+        { targets: [3], "orderable": false},
+    ]
+} 
+);
+
 //author table
 $('#author_table').DataTable(
 {
