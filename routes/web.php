@@ -19,6 +19,7 @@ Auth::routes();
 
 //Book module routes
 Route::get('/', 'BookController@index')->name('home');
+Route::get('home', 'BookController@index')->name('home');
 Route::prefix('book')->group(function () {
 	Route::get('/', 'BookController@index')->name('book.manage');
 	Route::get('add', 'BookController@add')->name('book.add');
@@ -35,4 +36,10 @@ Route::prefix('author')->group(function () {
 	Route::post('insert', 'AuthorController@insert')->name('author.insert');
 	Route::get('edit/{id}', 'AuthorController@edit')->name('author.edit');
 	Route::post('update', 'AuthorController@update')->name('author.update');  
+});
+
+//Export module routes
+Route::prefix('export')->group(function () {
+	Route::get('csv/{id}', 'ExportController@csv_export')->name('export.csv');
+	Route::get('xml/{id}', 'ExportController@xml_export')->name('export.xml');
 });

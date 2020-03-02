@@ -77,6 +77,40 @@
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                   CSV <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('export.csv', 1) }}">Title List</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('export.csv', 2) }}">Author List</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('export.csv', 3) }}">Title & Author List</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                   XML <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('export.xml', 1) }}">Title List</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('export.xml', 2) }}">Author List</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('export.xml', 3) }}">Title & Author List</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
